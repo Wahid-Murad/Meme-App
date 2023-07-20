@@ -21,7 +21,7 @@ class _MemeListWidgetState extends State<MemeListWidget> {
 
   Future<List<Meme>> fetchMemes() async {
     final response = await http.get(Uri.parse(
-        'https://api.imgflip.com/get_memes')); // Replace with your API URL
+        'https://api.imgflip.com/get_memes'));
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       final memesData = data['data']['memes'] as List<dynamic>;
